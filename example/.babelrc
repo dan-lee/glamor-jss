@@ -1,0 +1,4 @@
+{
+  "presets": ["razzle/babel", "stage-0"],
+  "plugins": ["glamor-jss/lib/hoist"]
+}

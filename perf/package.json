@@ -1,0 +1,25 @@
+{
+  "name": "glamor-jss-perf",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "babel-preset-env": "1.6.1",
+    "benchmark": "2.1.4",
+    "emotion": "9.0.1",
+    "es-hash": "1.0.4",
+    "glamor": "2.20.40",
+    "hash-it": "3.1.2",
+    "hash-object": "0.1.7",
+    "hash-sum": "1.0.2",
+    "object-hash": "1.2.0"
+  },
+  "devDependencies": {
+    "microtime": "2.1.7",
+    "parcel-bundler": "1.6.1"
+  },
+  "scripts": {
+    "bench": "node node.js",
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url ./"
+  }
+}

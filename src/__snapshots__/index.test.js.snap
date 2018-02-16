@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`css Complex styles 1`] = `
+".css-117948663 {
+  font-weight: bold;
+}
+.css-2681542364 {
+  color: papayawhip;
+  width: 350px;
+  height: 150px;
+  border: 1px solid mediumaquamarine;
+  font-weight: bold;
+  border-radius: 50%;
+}
+.css-2681542364:hover {
+  color: orchid;
+}
+@media (min-width: 800px) {
+  .css-2681542364 {
+    background: peachpuff;
+  }
+}"
+`;
+
+exports[`css Falsy values 1`] = `
+".css-3818422616:after {
+  height: 100px;
+}"
+`;
+
+exports[`css Overwrite styles 1`] = `
+".css-495221563 {
+  color: mediumaquamarine;
+}
+.css-1582468799 {
+  color: lightcoral;
+}
+.css-3896084115 {
+  color: thistle;
+}
+.css-26387063 {
+  color: thistle;
+}"
+`;
+
+exports[`css Simple styles 1`] = `
+".css-40020888 {
+  width: 100px;
+  height: 100px;
+}"
+`;

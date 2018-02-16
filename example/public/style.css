@@ -1,0 +1,24 @@
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Alegreya', serif;
+  user-select: none;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+#root {
+  height: 100%;
+}
+
+a, a:visited, a:hover {
+  color: unset;
+  text-decoration: none;
+}

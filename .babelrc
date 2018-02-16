@@ -1,0 +1,10 @@
+{
+  "presets": [["env", { "modules": false }]],
+  "plugins": ["transform-object-rest-spread", "transform-class-properties"],
+  "env": {
+    "test": {
+      "presets": ["env"],
+      "plugins": ["transform-object-rest-spread", "transform-class-properties", "./src/hoist"]
+    }
+  }
+}

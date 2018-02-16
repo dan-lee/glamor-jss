@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Babel plugin Changed default import 1`] = `
+"
+import spill from 'glamor-jss';
+var _ref = { color: 'blanchedalmond' };
+() => {
+  spill(_ref);
+  css({ color: 'lavenderblush' });
+};"
+`;
+
+exports[`Babel plugin Hoisting 1`] = `
+"var _this = this;
+
+import css from 'glamor-jss';
+
+const _static = 100;
+var _ref = { color: 'peachpuff' };
+var _ref2 = { color: 'peachpuff', width: _static };
+const scope = something => {
+  const hoist = css(_ref);
+  const plsHoist = css(_ref2);
+
+  const noHoist = css({ color: something && 'papayawhip' });
+  const plsNoHoist = css({ color: () => _this.otherThing && 'papayawhip' });
+};"
+`;
+
+exports[`Babel plugin Import 1`] = `
+"
+import css from 'glamor-jss';
+var _ref = { color: 'blanchedalmond' };
+() => css(_ref);"
+`;
+
+exports[`Babel plugin Require 1`] = `
+"
+const css = require('glamor-jss');
+var _ref = { color: 'blanchedalmond' };
+() => css(_ref);"
+`;
