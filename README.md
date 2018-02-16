@@ -87,7 +87,7 @@ res.status(200).send(`
 ```json
 // .babelrc
 {
-  "plugins": ["glamor-jss/hoist"]
+  "plugins": ["glamor-jss/lib/hoist"]
 }
 ```
 
