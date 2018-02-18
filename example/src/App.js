@@ -86,10 +86,10 @@ export default class App extends React.Component {
               {...css({ width: '100%', height: '100%', display: 'block' })}
             >
               <div {...css({ opacity: !lightsOn && 0 })}>
-                <img src={JssLightIcon} width={200} />
+                <img src={JssLightIcon} width={200} alt="" />
               </div>
               <div {...css({ opacity: lightsOn && 0 })}>
-                <img src={JssDarkIcon} width={200} />
+                <img src={JssDarkIcon} width={200} alt="" />
               </div>
             </a>
           </div>

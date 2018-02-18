@@ -1,6 +1,6 @@
 import StyleRule from 'jss/lib/rules/StyleRule'
 
-export default () => ({
+const NormalizePseudoSelectorPlugin = {
   onCreateRule: (name, decl, options) => {
     if (decl == null && typeof name !== 'string') {
       decl = name
@@ -15,4 +15,6 @@ export default () => ({
     })
     return new StyleRule(name, decl, options)
   },
-})
+}
+
+export default NormalizePseudoSelectorPlugin

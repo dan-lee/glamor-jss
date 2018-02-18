@@ -7,7 +7,12 @@ describe('css', () => {
   test('Simple styles', () => {
     const style = css({ width: 100, height: 100 })
     expect(renderToString()).toMatchSnapshot()
-    expect(style.toString()).toBe(style.className)
+    expect(style.toString()).not.toBeUndefined()
+
+    expect(Object.keys({ ...style })[0]).toEqual(
+      expect.stringMatching(/^data-css/)
+    )
+
     expect(css()).toBeUndefined()
   })
 
@@ -24,7 +29,10 @@ describe('css', () => {
       fontWeight: 'bold',
     })
     css(
-      [{ color: 'lightgoldenrodyellow' }, { height: 150, ':hover': { color: 'khaki' } }],
+      [
+        { color: 'lightgoldenrodyellow' },
+        { height: 150, ':hover': { color: 'khaki' } },
+      ],
       {
         border: '1px solid mediumaquamarine',
         width: 350,
@@ -59,9 +67,19 @@ describe('css', () => {
     expect(renderToString()).toMatchSnapshot()
   })
 
+  test('Multiple styles', () => {
+    const props = {
+      ...css({ color: 'peachpuff' }),
+      ...css({ width: '100vw' }),
+    }
+  })
+
   test('Cache styles', () => {
     const complex = [
-      [{ color: 'lightgoldenrodyellow' }, { height: 150, ':hover': { color: 'khaki' } }],
+      [
+        { color: 'lightgoldenrodyellow' },
+        { height: 150, ':hover': { color: 'khaki' } },
+      ],
       {
         border: '1px solid mediumaquamarine',
         width: 350,

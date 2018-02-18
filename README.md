@@ -23,7 +23,7 @@ Unfortunately it seems like a stale project, but I don't want to give up on it j
 
 That's why I created `glamor-jss`. It's not a plugin but more kind of like a wrapper around it.
 
-I wanted to make it possible to use as many styles as possible but in the end to only produce a single class name. And of course I wanted it fast. And I wanted it to be smart.
+I wanted it to be fast. And I wanted it to be smart.
 
 Of course I couldn't lift these heavy tasks all alone. I did some thorough research to back up this project with a bunch of great other projects:
 
@@ -33,6 +33,8 @@ Of course I couldn't lift these heavy tasks all alone. I did some thorough resea
 and of course, let's not forget
 
 * [`jss`](https://github.com/cssinjs/jss): Does all the heavy lifting in the `CSSOM`
+
+This is by no means feature complete and only supports the CSS object definition (e.g.: `css({ width: 100 })`) for now
 
 ## Usage
 

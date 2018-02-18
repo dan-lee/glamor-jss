@@ -1,6 +1,6 @@
 // needs a `yarn build` before
 const Benchmark = require('benchmark')
-const glamorJss = require('../../lib/cjs').default
+const glamorJss = require('../../lib/cjs/bundle').default
 const { css: glamorCss } = require('glamor')
 const { css: emotionCss } = require('emotion')
 

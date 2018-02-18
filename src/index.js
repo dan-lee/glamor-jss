@@ -5,6 +5,7 @@ import preset from 'jss-preset-default'
 import hashify from 'hash-it'
 import memoize from 'memoize-weak'
 import NormalizePseudoSelectorPlugin from './normalize-selector'
+import DataSelectorPlugin from './data-selector'
 import { processDeclarations, isEmptyObject, cleanup, isFalsy } from './utils'
 import Manager from './Manager'
 
@@ -15,8 +16,11 @@ export const jss = create(preset())
 export const getSheet = () => manager.getSheet()
 const cache = {}
 
+// render data selectors instead of classNames (like glamor)
+jss.use(DataSelectorPlugin)
+
 // Replace :hover with &:hover, etc.
-jss.use(NormalizePseudoSelectorPlugin())
+jss.use(NormalizePseudoSelectorPlugin)
 
 // First layer of caching
 export const css = memoize(cssImpl)
@@ -41,27 +45,25 @@ function cssImpl(...declarations) {
 
   // Go through all grouped declarations → { media: { '@media (…)': {} }, pseudo: { ':hover': {}, …}
   // Add them as rule with the same name and return the selector by reducing it
-  const selector = ['other', 'pseudo', 'media', 'supports'].reduce(
+  const rule = ['other', 'pseudo', 'media', 'supports'].reduce(
     (selector, key) => {
       const subDecl = groupedDecl[key]
       if (!isEmptyObject(subDecl)) {
         const cleanedDecl = cleanup(subDecl)
-        const rule = manager.addRule(hash, cleanedDecl)
-        return rule.selector
+        return manager.addRule(hash, cleanedDecl)
       }
       return selector
     },
     ''
   )
 
-  const className = selector.substring(1)
-  const result = { className }
+  const result = { [rule.dataSelector]: '' }
 
   // Add these properties as non-enumerable so they don't pollute spreading {...css(…)}
   Object.defineProperties(result, {
     toString: {
       enumerable: false,
-      value: () => className,
+      value: () => rule.classSelector,
     },
     hash: {
       enumerable: false,

@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`css Complex styles 1`] = `
-".css-117948663 {
+".css-117948663, [data-css-117948663] {
   font-weight: bold;
 }
-.css-2681542364 {
+.css-290847276, [data-css-290847276] {
   color: papayawhip;
   width: 350px;
   height: 150px;
@@ -12,39 +12,39 @@ exports[`css Complex styles 1`] = `
   font-weight: bold;
   border-radius: 50%;
 }
-.css-2681542364:hover {
+.css-290847276:hover, [data-css-290847276]:hover {
   color: orchid;
 }
 @media (min-width: 800px) {
-  .css-2681542364 {
+  .css-290847276, [data-css-290847276] {
     background: peachpuff;
   }
 }"
 `;
 
 exports[`css Falsy values 1`] = `
-".css-3818422616:after {
+".css-3818422616:after, [data-css-3818422616]:after {
   height: 100px;
 }"
 `;
 
 exports[`css Overwrite styles 1`] = `
-".css-495221563 {
+".css-495221563, [data-css-495221563] {
   color: mediumaquamarine;
 }
-.css-1582468799 {
+.css-1582468799, [data-css-1582468799] {
   color: lightcoral;
 }
-.css-3896084115 {
+.css-3896084115, [data-css-3896084115] {
   color: thistle;
 }
-.css-26387063 {
+.css-99195687, [data-css-99195687] {
   color: thistle;
 }"
 `;
 
 exports[`css Simple styles 1`] = `
-".css-40020888 {
+".css-40020888, [data-css-40020888] {
   width: 100px;
   height: 100px;
 }"
