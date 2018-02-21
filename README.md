@@ -1,5 +1,7 @@
 # glamor-jss
 
+[![Build Status](https://travis-ci.org/dan-lee/glamor-jss.svg?branch=master)](https://travis-ci.org/dan-lee/glamor-jss)
+
 Use [`glamor`](https://github.com/threepointone/glamor) flavored CSS with [`jss`](https://github.com/cssinjs/jss) under the hood…
 
 ## Install
