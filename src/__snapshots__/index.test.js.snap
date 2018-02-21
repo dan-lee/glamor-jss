@@ -28,6 +28,20 @@ exports[`css Falsy values 1`] = `
 }"
 `;
 
+exports[`css Keyframes 1`] = `
+"@keyframes pulsate-0 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}"
+`;
+
 exports[`css Overwrite styles 1`] = `
 ".css-495221563, [data-css-495221563] {
   color: mediumaquamarine;

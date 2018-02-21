@@ -16,6 +16,16 @@ describe('css', () => {
     expect(css()).toBeUndefined()
   })
 
+  test('Keyframes', () => {
+    css.keyframes('pulsate', {
+      '0%': { transform: 'scale(1)' },
+      '50%': { transform: 'scale(1.25)' },
+      '100%': { transform: 'scale(1)' },
+    })
+
+    expect(renderToString()).toMatchSnapshot()
+  })
+
   test('Falsy values', () => {
     css({ width: null, height: undefined, minWidth: false, ':hover': {} }, null)
     css([null, {}, []])

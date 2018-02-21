@@ -80,19 +80,16 @@ function cssImpl(...declarations) {
   return result
 }
 
-// @todo: Adding keyframes currently doesn't work
-// let animationCount = 0
-// css.keyframes = (name, declarations) => {
-//   if (typeof name !== 'string') {
-//     declarations = name
-//     name = 'animation'
-//   }
-//
-//   const uniqueName = `${name}-${animationCount++}`
-//
-//   return manager.addRule(uniqueName, {
-//     [`@keyframes ${uniqueName}`]: declarations,
-//   })
-// }
+let animationCount = 0
+css.keyframes = (name, declarations) => {
+  if (typeof name !== 'string') {
+    declarations = name
+    name = 'animation'
+  }
+
+  const uniqueName = `${name}-${animationCount++}`
+
+  return manager.addRule(`@keyframes ${uniqueName}`, declarations)
+}
 
 export default css
