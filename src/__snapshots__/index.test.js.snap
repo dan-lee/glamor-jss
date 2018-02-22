@@ -42,6 +42,13 @@ exports[`css Keyframes 1`] = `
 }"
 `;
 
+exports[`css Multiple styles 1`] = `
+Array [
+  "data-css-1805436552",
+  "data-css-3558729173",
+]
+`;
+
 exports[`css Overwrite styles 1`] = `
 ".css-495221563, [data-css-495221563] {
   color: mediumaquamarine;

@@ -82,6 +82,8 @@ describe('css', () => {
       ...css({ color: 'peachpuff' }),
       ...css({ width: '100vw' }),
     }
+
+    expect(Object.keys(props)).toMatchSnapshot()
   })
 
   test('Cache styles', () => {
