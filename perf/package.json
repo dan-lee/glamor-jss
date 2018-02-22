@@ -5,7 +5,7 @@
   "dependencies": {
     "babel-preset-env": "1.6.1",
     "benchmark": "2.1.4",
-    "emotion": "9.0.1",
+    "emotion": "9.0.2",
     "es-hash": "1.0.4",
     "glamor": "2.20.40",
     "hash-it": "3.1.2",
