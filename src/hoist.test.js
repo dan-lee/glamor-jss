@@ -25,6 +25,24 @@ describe('Babel plugin', () => {
     expect(result).toMatchSnapshot()
   })
 
+  test('Named import', () => {
+    const result = transform(`
+      import { css } from 'glamor-jss'
+      () => css({ color: 'papayawhip' })
+    `)
+
+    expect(result).toMatchSnapshot()
+  })
+
+  test('Named import with alias', () => {
+    const result = transform(`
+      import { css as myCss } from 'glamor-jss'
+      () => myCss({ color: 'papayawhip' })
+    `)
+
+    expect(result).toMatchSnapshot()
+  })
+
   test('Require', () => {
     const result = transform(`
       const css = require('glamor-jss');

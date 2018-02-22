@@ -34,6 +34,20 @@ var _ref = { color: 'blanchedalmond' };
 () => css(_ref);"
 `;
 
+exports[`Babel plugin Named import 1`] = `
+"
+import { css } from 'glamor-jss';
+var _ref = { color: 'papayawhip' };
+() => css(_ref);"
+`;
+
+exports[`Babel plugin Named import with alias 1`] = `
+"
+import { css as myCss } from 'glamor-jss';
+var _ref = { color: 'papayawhip' };
+() => myCss(_ref);"
+`;
+
 exports[`Babel plugin Require 1`] = `
 "
 const css = require('glamor-jss');
