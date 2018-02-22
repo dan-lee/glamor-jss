@@ -2,13 +2,9 @@ const isDataSelector = name => /\[data-css-.+\]/.test(name)
 
 const DataSelectorPlugin = {
   onProcessRule: rule => {
-    const { selectorText, options: { parent } } = rule
+    const { selectorText, type, options: { parent } } = rule
 
-    if (
-      rule.type === 'style' &&
-      !parent.type &&
-      !isDataSelector(selectorText)
-    ) {
+    if (type === 'style' && !parent.type && !isDataSelector(selectorText)) {
       rule.originalSelectorText = selectorText
       rule.classSelector = selectorText.substring(1)
       rule.dataSelector = `data-${rule.classSelector}`
