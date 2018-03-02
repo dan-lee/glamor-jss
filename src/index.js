@@ -88,8 +88,9 @@ css.keyframes = (name, declarations) => {
   }
 
   const uniqueName = `${name}-${animationCount++}`
+  manager.addRule(`@keyframes ${uniqueName}`, declarations)
 
-  return manager.addRule(`@keyframes ${uniqueName}`, declarations)
+  return uniqueName
 }
 
 export default css
