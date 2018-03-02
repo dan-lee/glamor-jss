@@ -16,13 +16,11 @@ describe('css', () => {
     expect(css()).toBeUndefined()
   })
 
-  test('Keyframes', () => {
-    css.keyframes('pulsate', {
-      '0%': { transform: 'scale(1)' },
-      '50%': { transform: 'scale(1.25)' },
-      '100%': { transform: 'scale(1)' },
-    })
-
+  test('Keyframes work without collision', () => {
+    css.keyframes('fade', { from: { opacity: 0 }, to: { opacity: 1 } })
+    css.keyframes('fade', { from: { opacity: 0 }, to: { opacity: 1 } })
+    css.keyframes({ from: { opacity: 0 }, to: { opacity: 1 } })
+    css.keyframes({ from: { opacity: 0 }, to: { opacity: 1 } })
     expect(renderToString()).toMatchSnapshot()
   })
 

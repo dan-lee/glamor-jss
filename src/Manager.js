@@ -58,12 +58,4 @@ export default class Manager {
 
     return rule
   }
-
-  deleteRule = ruleName => {
-    const sheet = this.getSheet()
-
-    if (IS_DEV) sheet.detach()
-    sheet.deleteRule(ruleName) && --this.rulesCount
-    if (IS_DEV) sheet.attach()
-  }
 }
