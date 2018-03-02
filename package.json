@@ -15,14 +15,15 @@
   },
   "files": [
     "lib",
-    "src"
+    "src",
+    "hoist.js"
   ],
   "scripts": {
-    "build": "rimraf lib && webpack && cp src/hoist.js lib",
-    "postinstall": "postinstall-build lib",
+    "build": "rimraf lib && webpack -p",
     "prettier": "prettier --write 'src/**.js'",
     "start": "cd example && yarn start",
-    "test": "BABEL_ENV=test jest"
+    "test": "BABEL_ENV=test jest",
+    "prepublishOnly": "yarn test && yarn build"
   },
   "dependencies": {
     "es6-weak-map": "2.0.2",
