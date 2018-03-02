@@ -1,5 +1,4 @@
-// import 'es6-weak-map/implement'
-
+import 'es6-weak-map/implement'
 import { create } from 'jss'
 import preset from 'jss-preset-default'
 import hashify from 'hash-it'
