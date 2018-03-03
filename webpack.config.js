@@ -1,13 +1,16 @@
 const webpack = require('webpack')
 const path = require('path')
+const externals = require('webpack-node-externals')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve('lib/cjs'),
-    filename: 'bundle.js',
+    path: path.resolve('lib'),
+    filename: 'glamor-jss.cjs.js',
     libraryTarget: 'commonjs2',
   },
+  externals: [externals()],
   module: {
     rules: [
       {
@@ -18,6 +21,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new UglifyJsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
   ],

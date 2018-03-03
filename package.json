@@ -3,8 +3,7 @@
   "version": "1.3.0",
   "description": "Use JSS in glamor style",
   "license": "MIT",
-  "main": "lib/cjs/bundle.js",
-  "module": "lib/es/bundle.js",
+  "main": "lib/glamor-jss.cjs.js",
   "author": {
     "name": "Daniel Lehr",
     "email": "daniellehr@gmx.de"
@@ -19,7 +18,7 @@
     "hoist.js"
   ],
   "scripts": {
-    "build": "rimraf lib && webpack -p",
+    "build": "rimraf lib && webpack",
     "prettier": "prettier --write 'src/**.js'",
     "start": "cd example && yarn start",
     "test": "BABEL_ENV=test jest",
@@ -36,19 +35,15 @@
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-loader": "7.1.3",
-    "babel-plugin-external-helpers": "6.22.0",
-    "babel-plugin-inline-version": "1.0.2",
     "babel-plugin-transform-class-properties": "6.24.1",
-    "babel-plugin-transform-es3-member-expression-literals": "6.22.0",
-    "babel-plugin-transform-es3-property-literals": "6.22.0",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.6.1",
-    "babel-preset-es2015": "6.24.1",
-    "babel-preset-stage-0": "6.24.1",
     "jest": "22.4.2",
     "prettier": "1.11.1",
     "rimraf": "2.6.2",
-    "webpack": "3.11.0"
+    "uglifyjs-webpack-plugin": "1.2.2",
+    "webpack": "3.11.0",
+    "webpack-node-externals": "1.6.0"
   },
   "prettier": {
     "semi": false,
