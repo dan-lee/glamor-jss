@@ -6,7 +6,7 @@ import CleanCss from 'clean-css'
 import App from './App'
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST)
-
+// You can minify the CSS sent from the server to save some bytes
 const clean = new CleanCss()
 const server = express()
 server

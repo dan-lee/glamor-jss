@@ -3,6 +3,7 @@ import css from 'glamor-jss'
 import JssDarkIcon from './jss-dark.svg'
 import JssLightIcon from './jss-light.svg'
 import Switch from './Switch'
+import Banner from './Banner'
 
 export const TRANSITION_DURATION = 250
 
@@ -69,7 +70,8 @@ export default class App extends React.Component {
     lightsOn: true,
   }
 
-  handleButtonClick = () => this.setState(({ lightsOn }) => ({ lightsOn: !lightsOn }))
+  handleButtonClick = () =>
+    this.setState(({ lightsOn }) => ({ lightsOn: !lightsOn }))
 
   render() {
     const { lightsOn } = this.state
@@ -79,6 +81,10 @@ export default class App extends React.Component {
 
     return (
       <Fragment>
+        <Banner
+          fill={lightsOn ? '#25292f' : '#fff'}
+          color={lightsOn ? '#fff' : '#25292f'}
+        />
         <div {...css(styles.wrapper, { background })}>
           <div {...styles.imageWrapper(fontColor)}>
             <a
