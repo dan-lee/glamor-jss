@@ -1,18 +1,18 @@
 import React from 'react'
-import css from 'glamor-jss'
+import { css } from 'glamor-jss'
 import { TRANSITION_DURATION } from './App'
 
-// const wave = css.keyframes('wave', {
-//   '0%, 100%': {
-//     transform: 'rotate(0)',
-//   },
-//   '20%, 60%': {
-//     transform: 'rotate(-25deg)',
-//   },
-//   '40%, 80%': {
-//     transform: 'rotate(10deg)',
-//   },
-// })
+const wave = css.keyframes('wave', {
+  '0%, 100%': {
+    transform: 'rotate(0)',
+  },
+  '20%, 60%': {
+    transform: 'rotate(-25deg)',
+  },
+  '40%, 80%': {
+    transform: 'rotate(10deg)',
+  },
+})
 
 const styles = {
   banner: (fill, color) =>
@@ -25,7 +25,7 @@ const styles = {
       fill,
       color,
       ':hover .octo-arm': {
-        //animation: `${wave} 500ms ease-in-out`,
+        animation: `${wave} 500ms ease-in-out`,
       },
     }),
   arm: css({
