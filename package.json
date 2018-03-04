@@ -1,6 +1,6 @@
 {
   "name": "glamor-jss",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Use JSS in glamor style",
   "license": "MIT",
   "main": "lib/glamor-jss.cjs.js",
