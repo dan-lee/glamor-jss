@@ -1,8 +1,28 @@
 const isObject = val =>
   Object.prototype.toString.call(val) === '[object Object]'
+
 const flatten = arr => Array.prototype.concat(...arr)
+
 const mergeValues = arr =>
   arr.reduce((prev, curr) => ({ ...prev, ...curr }), {})
+
+const mergeDeep = (...objects) =>
+  objects.reduce((prev, curr) => {
+    Object.keys(curr).forEach(key => {
+      const prevVal = prev[key]
+      const currVal = curr[key]
+
+      if (Array.isArray(prevVal) && Array.isArray(currVal)) {
+        prev[key] = prevVal.concat(...currVal)
+      } else if (isObject(prevVal) && isObject(currVal)) {
+        prev[key] = mergeDeep(prevVal, currVal)
+      } else {
+        prev[key] = currVal
+      }
+    })
+
+    return prev
+  }, {})
 
 export const isFalsy = value =>
   value === null ||
@@ -42,14 +62,19 @@ export const groupByType = obj =>
     { media: {}, supports: {}, pseudo: {}, other: {} }
   )
 
-export const processDeclarations = declarations => {
-  // This flattens the declarations, combines the values by taking the latest (mergeValues),
-  // filters out falsy values and groups them in to @media/@support/pseudos and others
-  // to give them precendence in the stylesheet
-  const flattened = declarations.map(
-    d => (Array.isArray(d) ? mergeValues(flatten(d)) : d)
-  )
-  const merged = mergeValues(flattened)
+/**
+ * This pulls out previous declared declarations,
+ * flattens them, combines the values by taking the latest (mergeValues),
+ * filters out falsy values and groups them in to @media/@support/pseudos and others
+ * to give them precendence in the stylesheet
+ */
+export const processDeclarations = (declarations, cache) => {
+  const flattened = declarations
+    .map(d => (d && d.hash ? cache[d.hash].values : d))
+    .map(d => (Array.isArray(d) ? mergeValues(flatten(d)) : d))
+    .filter(d => d)
+
+  const merged = mergeDeep(...flattened)
 
   return groupByType(merged)
 }

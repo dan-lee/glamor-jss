@@ -34,19 +34,13 @@ function cssImpl(...declarations) {
   }
 
   if (isFalsy(declarations)) return
-
-  // Pull out already declared rules
-  const cleanedDecl = declarations.map(
-    decl => (decl && 'values' in decl ? decl.values : decl)
-  )
-
-  const groupedDecl = processDeclarations(cleanedDecl)
+  const grouped = processDeclarations(declarations, cache)
 
   // Go through all grouped declarations → { media: { '@media (…)': {} }, pseudo: { ':hover': {}, …}
   // Add them as rule with the same name and return the selector by reducing it
   const rule = ['other', 'pseudo', 'media', 'supports'].reduce(
     (selector, key) => {
-      const subDecl = groupedDecl[key]
+      const subDecl = grouped[key]
       if (!isEmptyObject(subDecl)) {
         const cleanedDecl = cleanup(subDecl)
         return manager.addRule(hash, cleanedDecl)

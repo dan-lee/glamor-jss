@@ -70,6 +70,57 @@ Array [
 ]
 `;
 
+exports[`css Nested functional styles 1`] = `
+".css-16566771, [data-css-16566771] {
+  color: gray;
+  position: relative;
+}
+.css-16566771:before, [data-css-16566771]:before {
+  top: 0;
+  content: \\"\\";
+  position: absolute;
+}
+.css-16566771:hover, [data-css-16566771]:hover {
+  color: peachpuff;
+}
+.css-16566771:hover:before, [data-css-16566771]:hover:before {
+  top: 10px;
+}
+.css-792391987, [data-css-792391987] {
+  color: peachpuff;
+  position: relative;
+}
+.css-792391987:before, [data-css-792391987]:before {
+  top: 10px;
+  content: \\"\\";
+  position: absolute;
+}
+.css-792391987:hover, [data-css-792391987]:hover {
+  color: peachpuff;
+}
+.css-792391987:hover:before, [data-css-792391987]:hover:before {
+  top: 10px;
+}
+.css-3593345686, [data-css-3593345686] {
+  color: gray;
+  position: relative;
+}
+.css-3593345686:before, [data-css-3593345686]:before {
+  top: 0;
+  content: \\"\\";
+  position: absolute;
+}
+.css-2598794915, [data-css-2598794915] {
+  color: gray;
+  position: relative;
+}
+.css-2598794915:before, [data-css-2598794915]:before {
+  top: 0;
+  content: \\"\\";
+  position: absolute;
+}"
+`;
+
 exports[`css Overwrite styles 1`] = `
 ".css-495221563, [data-css-495221563] {
   color: mediumaquamarine;

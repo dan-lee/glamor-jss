@@ -63,6 +63,32 @@ describe('css', () => {
     expect(renderToString()).toMatchSnapshot()
   })
 
+  test('Nested functional styles', () => {
+    const activeStyle = {
+      color: 'peachpuff',
+      ':before': {
+        top: 10,
+      },
+    }
+
+    const style = hover =>
+      css({
+        position: 'relative',
+        color: 'gray',
+        ':before': {
+          position: 'absolute',
+          content: `""`,
+          top: 0,
+        },
+        ':hover': hover && activeStyle,
+      })
+
+    const styles = toggle => css(style(toggle), toggle && activeStyle)
+    expect(styles(true)).toEqual({ 'data-css-792391987': '' })
+    expect(styles(false)).toEqual({ 'data-css-2598794915': '' })
+    expect(renderToString()).toMatchSnapshot()
+  })
+
   test('Overwrite styles', () => {
     css(
       css({ color: 'mediumaquamarine' }),
