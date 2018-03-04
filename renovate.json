@@ -1,5 +1,11 @@
 {
   "extends": [
     "config:base"
+  ],
+  "pathRules": [
+    {
+      "paths": ["examples/**", "perf/**"],
+      "extends": [":disableRenovate"]
+    }
   ]
 }
