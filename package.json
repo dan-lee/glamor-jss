@@ -18,10 +18,12 @@
     "hoist.js"
   ],
   "scripts": {
-    "build": "rimraf lib && webpack",
+    "prebuild": "rimraf lib",
+    "build": "webpack",
     "prettier": "prettier --write 'src/**.js'",
     "start": "cd example && yarn start",
     "test": "BABEL_ENV=test jest",
+    "postversion": "git push --tags",
     "prepublishOnly": "yarn test && yarn build"
   },
   "dependencies": {
