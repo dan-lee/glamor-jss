@@ -4,7 +4,7 @@
   ],
   "pathRules": [
     {
-      "paths": ["examples/**", "perf/**"],
+      "paths": ["example/**", "perf/**"],
       "extends": [":disableRenovate"]
     }
   ]
