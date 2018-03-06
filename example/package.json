@@ -10,7 +10,7 @@
     "deploy": "now --public"
   },
   "dependencies": {
-    "clean-css": "4.1.9",
+    "clean-css": "4.1.11",
     "express": "4.16.2",
     "glamor-jss": "latest",
     "raf": "3.4.0",
