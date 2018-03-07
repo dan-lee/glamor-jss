@@ -39,6 +39,27 @@ and of course, let's not forget
 
 This is by no means feature complete and only supports the CSS object definition (e.g.: `css({ width: 100 })`) for now. I don't plan to support string templates.
 
+API wise for now it supports:
+
+* `css` object spreading
+* `css` as class names
+* `css.keyframes`
+* Babel hoisting (`glamor-jss/hoist`)
+* `renderToString` Server side rendering 
+
+This is all I needed for now, but I am happy to extend it further or accept PRs
+
+### Just want to try it out?
+
+There's a [codeshift](https://github.com/facebook/jscodeshift) which will all `glamor` imports with `glamor-jss` imports.  
+Be aware that only a limited set of the glamor API is available (see above).
+
+Just run
+
+```sh
+jscodeshift -t glamor-jss/codeshift.js src
+```
+
 ## Usage
 
 🎊 **[See the demo](https://glamor-jss.now.sh)** 🎉 (and the [according source](example/src))
