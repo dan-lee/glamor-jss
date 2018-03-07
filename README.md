@@ -51,7 +51,7 @@ This is all I needed for now, but I am happy to extend it further or accept PRs
 
 ### Just want to try it out?
 
-There's a [codeshift](https://github.com/facebook/jscodeshift) which will all `glamor` imports with `glamor-jss` imports.  
+There's a [codeshift](https://github.com/facebook/jscodeshift) which will replace all `glamor` imports with `glamor-jss` imports.  
 Be aware that only a limited set of the glamor API is available (see above).
 
 Just run
