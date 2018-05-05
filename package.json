@@ -30,7 +30,7 @@
     "es6-weak-map": "2.0.2",
     "hash-it": "3.1.2",
     "jss": "9.8.1",
-    "jss-preset-default": "4.3.0",
+    "jss-preset-default": "4.5.0",
     "memoize-weak": "1.0.2"
   },
   "devDependencies": {
