@@ -29,23 +29,23 @@
   "dependencies": {
     "es6-weak-map": "2.0.2",
     "hash-it": "3.1.2",
-    "jss": "9.8.0",
-    "jss-preset-default": "4.3.0",
+    "jss": "9.8.1",
+    "jss-preset-default": "4.5.0",
     "memoize-weak": "1.0.2"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
-    "babel-core": "6.26.0",
+    "babel-core": "6.26.3",
     "babel-loader": "7.1.4",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-preset-env": "1.6.1",
-    "jest": "22.4.2",
-    "prettier": "1.11.1",
+    "babel-preset-env": "1.7.0",
+    "jest": "23.0.1",
+    "prettier": "1.13.0",
     "rimraf": "2.6.2",
-    "uglifyjs-webpack-plugin": "1.2.2",
-    "webpack": "3.11.0",
-    "webpack-node-externals": "1.6.0"
+    "uglifyjs-webpack-plugin": "1.2.5",
+    "webpack": "4.9.1",
+    "webpack-node-externals": "1.7.2"
   },
   "prettier": {
     "semi": false,
