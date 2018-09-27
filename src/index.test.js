@@ -84,8 +84,8 @@ describe('css', () => {
       })
 
     const styles = toggle => css(style(toggle), toggle && activeStyle)
-    expect(styles(true)).toEqual({ 'data-css-792391987': '' })
-    expect(styles(false)).toEqual({ 'data-css-2598794915': '' })
+    expect(styles(true)).toEqual({ 'data-css-13686855474469': '' })
+    expect(styles(false)).toEqual({ 'data-css-13921000805328': '' })
     expect(renderToString()).toMatchSnapshot()
   })
 

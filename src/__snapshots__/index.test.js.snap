@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`css Complex styles 1`] = `
-".css-117948663, [data-css-117948663] {
+".css-12483742431659, [data-css-12483742431659] {
   font-weight: bold;
 }
-.css-290847276, [data-css-290847276] {
+.css-434809571958, [data-css-434809571958] {
   color: papayawhip;
   width: 350px;
   height: 150px;
@@ -12,18 +12,18 @@ exports[`css Complex styles 1`] = `
   font-weight: bold;
   border-radius: 50%;
 }
-.css-290847276:hover, [data-css-290847276]:hover {
+.css-434809571958:hover, [data-css-434809571958]:hover {
   color: orchid;
 }
 @media (min-width: 800px) {
-  .css-290847276, [data-css-290847276] {
+  .css-434809571958, [data-css-434809571958] {
     background: peachpuff;
   }
 }"
 `;
 
 exports[`css Falsy values 1`] = `
-".css-3818422616:after, [data-css-3818422616]:after {
+".css-9467316260603:after, [data-css-9467316260603]:after {
   height: 100px;
 }"
 `;
@@ -65,56 +65,65 @@ exports[`css Keyframes work without collision 1`] = `
 
 exports[`css Multiple styles 1`] = `
 Array [
-  "data-css-1805436552",
-  "data-css-3558729173",
+  "data-css-7696658414362",
+  "data-css-15533376699467",
 ]
 `;
 
+exports[`css Multiple styles 2`] = `
+".css-7696658414362, [data-css-7696658414362] {
+  color: peachpuff;
+}
+.css-15533376699467, [data-css-15533376699467] {
+  width: 100vw;
+}"
+`;
+
 exports[`css Nested functional styles 1`] = `
-".css-16566771, [data-css-16566771] {
+".css-12694328089617, [data-css-12694328089617] {
   color: gray;
   position: relative;
 }
-.css-16566771:before, [data-css-16566771]:before {
+.css-12694328089617:before, [data-css-12694328089617]:before {
   top: 0;
   content: \\"\\";
   position: absolute;
 }
-.css-16566771:hover, [data-css-16566771]:hover {
+.css-12694328089617:hover, [data-css-12694328089617]:hover {
   color: peachpuff;
 }
-.css-16566771:hover:before, [data-css-16566771]:hover:before {
+.css-12694328089617:hover:before, [data-css-12694328089617]:hover:before {
   top: 10px;
 }
-.css-792391987, [data-css-792391987] {
+.css-13686855474469, [data-css-13686855474469] {
   color: peachpuff;
   position: relative;
 }
-.css-792391987:before, [data-css-792391987]:before {
+.css-13686855474469:before, [data-css-13686855474469]:before {
   top: 10px;
   content: \\"\\";
   position: absolute;
 }
-.css-792391987:hover, [data-css-792391987]:hover {
+.css-13686855474469:hover, [data-css-13686855474469]:hover {
   color: peachpuff;
 }
-.css-792391987:hover:before, [data-css-792391987]:hover:before {
+.css-13686855474469:hover:before, [data-css-13686855474469]:hover:before {
   top: 10px;
 }
-.css-3593345686, [data-css-3593345686] {
+.css-6315176858355, [data-css-6315176858355] {
   color: gray;
   position: relative;
 }
-.css-3593345686:before, [data-css-3593345686]:before {
+.css-6315176858355:before, [data-css-6315176858355]:before {
   top: 0;
   content: \\"\\";
   position: absolute;
 }
-.css-2598794915, [data-css-2598794915] {
+.css-13921000805328, [data-css-13921000805328] {
   color: gray;
   position: relative;
 }
-.css-2598794915:before, [data-css-2598794915]:before {
+.css-13921000805328:before, [data-css-13921000805328]:before {
   top: 0;
   content: \\"\\";
   position: absolute;
@@ -122,22 +131,22 @@ exports[`css Nested functional styles 1`] = `
 `;
 
 exports[`css Overwrite styles 1`] = `
-".css-495221563, [data-css-495221563] {
+".css-1113385277541, [data-css-1113385277541] {
   color: mediumaquamarine;
 }
-.css-1582468799, [data-css-1582468799] {
+.css-7242087029549, [data-css-7242087029549] {
   color: lightcoral;
 }
-.css-3896084115, [data-css-3896084115] {
+.css-14164733049051, [data-css-14164733049051] {
   color: thistle;
 }
-.css-99195687, [data-css-99195687] {
+.css-13164275224355, [data-css-13164275224355] {
   color: thistle;
 }"
 `;
 
 exports[`css Simple styles 1`] = `
-".css-40020888, [data-css-40020888] {
+".css-5638800070770, [data-css-5638800070770] {
   width: 100px;
   height: 100px;
 }"
