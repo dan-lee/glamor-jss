@@ -1,56 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Babel plugin Changed default import 1`] = `
-"
-import spill from 'glamor-jss';
-var _ref = { color: 'blanchedalmond' };
+"import spill from 'glamor-jss';
+var _ref = {
+  color: 'blanchedalmond'
+};
+
 () => {
   spill(_ref);
-  css({ color: 'lavenderblush' });
+  css({
+    color: 'lavenderblush'
+  });
 };"
 `;
 
 exports[`Babel plugin Hoisting 1`] = `
-"var _this = this;
-
-import css from 'glamor-jss';
-
+"import css from 'glamor-jss';
 const _static = 100;
-var _ref = { color: 'peachpuff' };
-var _ref2 = { color: 'peachpuff', width: _static };
+var _ref = {
+  color: 'peachpuff'
+};
+var _ref2 = {
+  color: 'peachpuff',
+  width: _static
+};
+
 const scope = something => {
   const hoist = css(_ref);
   const plsHoist = css(_ref2);
-
-  const noHoist = css({ color: something && 'papayawhip' });
-  const plsNoHoist = css({ color: () => _this.otherThing && 'papayawhip' });
+  const noHoist = css({
+    color: something && 'papayawhip'
+  });
+  const plsNoHoist = css({
+    color: () => this.otherThing && 'papayawhip'
+  });
 };"
 `;
 
 exports[`Babel plugin Import 1`] = `
-"
-import css from 'glamor-jss';
-var _ref = { color: 'blanchedalmond' };
+"import css from 'glamor-jss';
+var _ref = {
+  color: 'blanchedalmond'
+};
+
 () => css(_ref);"
 `;
 
 exports[`Babel plugin Named import 1`] = `
-"
-import { css } from 'glamor-jss';
-var _ref = { color: 'papayawhip' };
+"import { css } from 'glamor-jss';
+var _ref = {
+  color: 'papayawhip'
+};
+
 () => css(_ref);"
 `;
 
 exports[`Babel plugin Named import with alias 1`] = `
-"
-import { css as myCss } from 'glamor-jss';
-var _ref = { color: 'papayawhip' };
+"import { css as myCss } from 'glamor-jss';
+var _ref = {
+  color: 'papayawhip'
+};
+
 () => myCss(_ref);"
 `;
 
 exports[`Babel plugin Require 1`] = `
-"
-const css = require('glamor-jss');
-var _ref = { color: 'blanchedalmond' };
+"const css = require('glamor-jss');
+
+var _ref = {
+  color: 'blanchedalmond'
+};
+
 () => css(_ref);"
 `;
