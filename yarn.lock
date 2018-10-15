@@ -1494,6 +1494,10 @@ cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   dependencies:
     cssom "0.3.x"
 
+curriable@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/curriable/-/curriable-1.1.0.tgz#51817788748032244e73d24b98128a7b6d9c799d"
+
 cyclist@~0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
@@ -1901,6 +1905,10 @@ fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
 
+fast-stringify@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/fast-stringify/-/fast-stringify-1.1.1.tgz#7abaff0e0ba09193a23cae940d6680f0c6f79e55"
+
 fb-watchman@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/fb-watchman/-/fb-watchman-2.0.0.tgz#54e9abf7dfa2f26cd9b1636c588c1afc05de5d58"
@@ -2227,10 +2235,12 @@ hash-base@^3.0.0:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-hash-it@3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/hash-it/-/hash-it-3.1.2.tgz#2f5231a497da726c65f0758060032e5a894a93ee"
+hash-it@4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/hash-it/-/hash-it-4.0.3.tgz#38272c85fc2ea58c8e0f7b06811d7af673f095d4"
   dependencies:
+    curriable "^1.1.0"
+    fast-stringify "^1.1.1"
     json-prune "^1.1.0"
 
 hash.js@^1.0.0, hash.js@^1.0.3:
