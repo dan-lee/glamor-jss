@@ -30,7 +30,7 @@ I wanted it to be fast. And I wanted it to be smart.
 
 Of course I couldn't lift these heavy tasks all alone. I did some thorough research to back up this project with a bunch of great other projects:
 
-* [`hash-it`](https://github.com/planttheidea/hash-it): blazing fast hash calculations for objects (check [`/perf`](perf/) if you're interested) to cache the 💩 out of it.
+* [`hash-it`](https://github.com/planttheidea/hash-it): fast object hashing to cache the 💩 out of it.
 * [`memoize-weak`](https://github.com/timkendrick/memoize-weak): combined with the hoisting plugin for babel this produces even better caching possibilites (uses `WeakMap` if possible).
 
 and of course, let's not forget
