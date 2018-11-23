@@ -70,15 +70,6 @@ Array [
 ]
 `;
 
-exports[`css Multiple styles 2`] = `
-".css-7696658414362, [data-css-7696658414362] {
-  color: peachpuff;
-}
-.css-15533376699467, [data-css-15533376699467] {
-  width: 100vw;
-}"
-`;
-
 exports[`css Nested functional styles 1`] = `
 ".css-12694328089617, [data-css-12694328089617] {
   color: gray;
