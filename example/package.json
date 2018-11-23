@@ -10,11 +10,12 @@
     "deploy": "now --public"
   },
   "dependencies": {
-    "clean-css": "4.1.9",
-    "express": "4.16.2",
-    "glamor-jss": "latest",
-    "raf": "3.4.0",
-    "razzle": "0.8.12",
-    "react": "16.2.0"
+    "clean-css": "4.2.1",
+    "express": "4.16.4",
+    "glamor-jss": "1.4.1",
+    "raf": "3.4.1",
+    "razzle": "2.4.0",
+    "react": "16.6.3",
+    "react-dom": "16.6.3"
   }
 }
