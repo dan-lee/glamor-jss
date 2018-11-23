@@ -72,7 +72,7 @@ export const processDeclarations = (declarations, cache) => {
   const flattened = declarations
     .map(d => (d && d.hash ? cache[d.hash].values : d))
     .map(d => (Array.isArray(d) ? mergeValues(flatten(d)) : d))
-    .filter(d => d)
+    .filter(Boolean)
 
   const merged = mergeDeep(...flattened)
 
