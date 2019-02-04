@@ -46,7 +46,7 @@
     "prettier": "1.16.4",
     "rimraf": "2.6.3",
     "uglifyjs-webpack-plugin": "2.1.1",
-    "webpack": "4.29.0",
+    "webpack": "4.29.1",
     "webpack-cli": "3.2.1",
     "webpack-node-externals": "1.7.2"
   },
