@@ -71,7 +71,7 @@ describe('css', () => {
       },
     }
 
-    const style = hover =>
+    const style = (hover: boolean) =>
       css({
         position: 'relative',
         color: 'gray',
@@ -83,7 +83,8 @@ describe('css', () => {
         ':hover': hover && activeStyle,
       })
 
-    const styles = toggle => css(style(toggle), toggle && activeStyle)
+    const styles = (toggle: boolean) =>
+      css(style(toggle), toggle && activeStyle)
     expect(styles(true)).toEqual({ 'data-css-13686855474469': '' })
     expect(styles(false)).toEqual({ 'data-css-13921000805328': '' })
     expect(renderToString()).toMatchSnapshot()
@@ -130,7 +131,9 @@ describe('css', () => {
     ]
 
     expect(css({ color: 'red' })).toBe(css({ color: 'red' }))
-    expect(css({ width: y => y + 1 })).toEqual(css({ width: y => y + 1 }))
+    expect(css({ width: (y: number) => y + 1 })).toEqual(
+      css({ width: (y: number) => y + 1 })
+    )
     expect(css(complex)).toBe(css(complex))
   })
 

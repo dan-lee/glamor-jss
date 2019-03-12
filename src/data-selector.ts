@@ -1,8 +1,14 @@
-const isDataSelector = name => /\[data-css-.+\]/.test(name)
+import { Rule } from 'jss'
+
+const isDataSelector = (name: string) => /\[data-css-.+\]/.test(name)
 
 const DataSelectorPlugin = {
-  onProcessRule: rule => {
-    const { selectorText, type, options: { parent } } = rule
+  onProcessRule: (rule: Rule) => {
+    const {
+      selectorText,
+      type,
+      options: { parent },
+    } = rule
 
     if (type === 'style' && !parent.type && !isDataSelector(selectorText)) {
       rule.originalSelectorText = selectorText

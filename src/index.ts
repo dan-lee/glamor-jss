@@ -1,5 +1,5 @@
 import 'es6-weak-map/implement'
-import { create } from 'jss'
+import { create, Rule, StyleSheet } from 'jss'
 import preset from 'jss-preset-default'
 import hashify from 'hash-it'
 import memoize from 'memoize-weak'
@@ -16,10 +16,10 @@ export const getSheet = () => manager.getSheet()
 const cache = {}
 
 // render data selectors instead of classNames (like glamor)
-jss.use(DataSelectorPlugin)
+jss.use({ DataSelectorPlugin })
 
 // Replace :hover with &:hover, etc.
-jss.use(NormalizePseudoSelectorPlugin)
+jss.use({ NormalizePseudoSelectorPlugin })
 
 // First layer of caching
 export const css = memoize(cssImpl)

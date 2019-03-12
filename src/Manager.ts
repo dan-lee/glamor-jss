@@ -1,5 +1,6 @@
-import { SheetsRegistry } from 'jss'
+import { Rule, RuleOptions, SheetsRegistry, StyleSheet } from 'jss'
 import { jss } from './index'
+import { Style } from 'jss/css'
 
 const IS_DEV = process.env.NODE_ENV !== 'production'
 
@@ -7,14 +8,17 @@ export const MAX_RULES = 65534
 
 export default class Manager {
   registry = new SheetsRegistry()
-  currentSheet = null
+  currentSheet: StyleSheet | null = null
   rulesCount = 0
   sheetCount = 0
+  options = {
+    sheetPrefix: 'glamor-jss',
+    classNamePrefix: 'css',
+  }
 
-  constructor(options) {
+  constructor(options?: {}) {
     this.options = {
-      sheetPrefix: 'glamor-jss',
-      classNamePrefix: 'css',
+      ...this.options,
       ...options,
     }
   }
@@ -24,13 +28,17 @@ export default class Manager {
     this.currentSheet = null
   }
 
-  createSheet = () => {
+  createSheet = (): StyleSheet => {
     const { sheetPrefix } = this.options
 
-    const sheet = jss.createStyleSheet(null, {
-      generateClassName: rule => `${this.options.classNamePrefix}-${rule.key}`,
-      meta: `${sheetPrefix}-${this.sheetCount++}`,
-    })
+    const sheet = jss.createStyleSheet<string>(
+      {},
+      {
+        generateClassName: (rule: Rule) =>
+          `${this.options.classNamePrefix}-${rule.key}`,
+        meta: `${sheetPrefix}-${this.sheetCount++}`,
+      }
+    )
     this.registry.add(sheet)
 
     return sheet
@@ -43,7 +51,7 @@ export default class Manager {
     return this.currentSheet
   }
 
-  addRule = (hash, declarations, options) => {
+  addRule = (hash: string, declarations: Style, options: RuleOptions) => {
     const sheet = this.getSheet()
 
     // Detatch and attach again to make Chrome Dev Tools working
