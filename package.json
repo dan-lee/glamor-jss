@@ -43,7 +43,7 @@
     "babel-jest": "24.7.1",
     "babel-loader": "8.0.5",
     "jest": "24.7.1",
-    "prettier": "1.16.4",
+    "prettier": "1.17.0",
     "rimraf": "2.6.3",
     "uglifyjs-webpack-plugin": "2.1.2",
     "webpack": "4.29.6",
