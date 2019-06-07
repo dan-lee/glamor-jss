@@ -27,7 +27,7 @@
     "prepublishOnly": "yarn test && yarn build"
   },
   "dependencies": {
-    "es6-weak-map": "2.0.2",
+    "es6-weak-map": "2.0.3",
     "hash-it": "4.0.4",
     "jss": "9.8.7",
     "jss-preset-default": "4.5.0",
