@@ -2,10 +2,10 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "lib": ["es2015", "dom"],
+    "lib": ["esnext", "dom"],
     "declaration": true,
     "outDir": "./dist",
-    "rootDir": "./",
+    "rootDir": "./src",
     "composite": true,
     "removeComments": true,
     "strict": true,
@@ -23,5 +23,5 @@
     "esModuleInterop": true
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "src/**/*.test.ts"]
 }

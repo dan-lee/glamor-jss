@@ -1,1 +1,1 @@
-module.exports = require('./src/hoist')
+module.exports = require('./dist/hoist.js')
