@@ -1,14 +1,14 @@
 const PACKAGE_NAME = 'glamor-jss'
 
-module.exports = ({ types: t }) => ({
+export default ({ types: t }: any) => ({
   visitor: {
-    ImportDeclaration(path) {
+    ImportDeclaration(path: any) {
       const { node } = path
       if (node.source && node.source.value === PACKAGE_NAME) {
-        this.importName = node.specifiers[0].local.name
+        ;(this as any).importName = node.specifiers[0].local.name
       }
     },
-    CallExpression(path) {
+    CallExpression(path: any) {
       const { node } = path
       const { callee } = node
 
@@ -21,15 +21,19 @@ module.exports = ({ types: t }) => ({
         t.isVariableDeclarator(path.parent)
       ) {
         // const css = require(...)
-        this.importName = path.parent.id.name
-      } else if (t.isIdentifier(callee) && callee.name === this.importName) {
+        ;(this as any).importName = path.parent.id.name
+      } else if (
+        t.isIdentifier(callee) &&
+        callee.name === (this as any).importName
+      ) {
         // <div {...css({…})} />
         const bindings = Object.keys(path.scope.bindings)
         const args = path.get('arguments')
 
-        const hasScopedBinding = arg => bindings.indexOf(arg.node.name) > -1
+        const hasScopedBinding = (arg: any) =>
+          bindings.indexOf(arg.node.name) > -1
         if (!args.some(hasScopedBinding)) {
-          args.forEach(p => {
+          args.forEach((p: any) => {
             if (p.isPure() && p.evaluate().confident) {
               p.hoist()
             }

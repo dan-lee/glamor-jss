@@ -4,32 +4,29 @@ exports[`css Complex styles 1`] = `
 ".css-12483742431659, [data-css-12483742431659] {
   font-weight: bold;
 }
-.css-434809571958, [data-css-434809571958] {
+.css-16140790311946, [data-css-16140790311946] {
   color: papayawhip;
   width: 350px;
-  height: 150px;
   border: 1px solid mediumaquamarine;
+  height: 150px;
   font-weight: bold;
   border-radius: 50%;
 }
-.css-434809571958:hover, [data-css-434809571958]:hover {
+.css-16140790311946:hover, [data-css-16140790311946]:hover {
   color: orchid;
+  background: yellow;
 }
 @media (min-width: 800px) {
-  .css-434809571958, [data-css-434809571958] {
+  .css-16140790311946 {
     background: peachpuff;
   }
 }"
 `;
 
-exports[`css Falsy values 1`] = `
-".css-9467316260603:after, [data-css-9467316260603]:after {
-  height: 100px;
-}"
-`;
+exports[`css Falsy values 1`] = `""`;
 
 exports[`css Keyframes work without collision 1`] = `
-"@keyframes fade-0 {
+"@keyframes css-keyframes-fade-0 {
   from {
     opacity: 0;
   }
@@ -37,7 +34,7 @@ exports[`css Keyframes work without collision 1`] = `
     opacity: 1;
   }
 }
-@keyframes fade-1 {
+@keyframes css-keyframes-fade-1 {
   from {
     opacity: 0;
   }
@@ -45,7 +42,7 @@ exports[`css Keyframes work without collision 1`] = `
     opacity: 1;
   }
 }
-@keyframes animation-2 {
+@keyframes css-keyframes-animation-2 {
   from {
     opacity: 0;
   }
@@ -53,7 +50,7 @@ exports[`css Keyframes work without collision 1`] = `
     opacity: 1;
   }
 }
-@keyframes animation-3 {
+@keyframes css-keyframes-animation-3 {
   from {
     opacity: 0;
   }
@@ -70,51 +67,51 @@ Array [
 ]
 `;
 
-exports[`css Nested functional styles 1`] = `
-".css-12694328089617, [data-css-12694328089617] {
+exports[`css Nested functional styles 3`] = `
+".css-2084834786935, [data-css-2084834786935] {
   color: gray;
   position: relative;
 }
-.css-12694328089617:before, [data-css-12694328089617]:before {
+.css-2084834786935:before, [data-css-2084834786935]:before {
   top: 0;
   content: \\"\\";
   position: absolute;
 }
-.css-12694328089617:hover, [data-css-12694328089617]:hover {
+.css-2084834786935:hover, [data-css-2084834786935]:hover {
   color: peachpuff;
 }
-.css-12694328089617:hover:before, [data-css-12694328089617]:hover:before {
+.css-2084834786935:hover:before, [data-css-2084834786935]:hover:before {
   top: 10px;
 }
-.css-13686855474469, [data-css-13686855474469] {
+.css-3275816868020, [data-css-3275816868020] {
   color: peachpuff;
   position: relative;
 }
-.css-13686855474469:before, [data-css-13686855474469]:before {
+.css-3275816868020:before, [data-css-3275816868020]:before {
   top: 10px;
   content: \\"\\";
   position: absolute;
 }
-.css-13686855474469:hover, [data-css-13686855474469]:hover {
+.css-3275816868020:hover, [data-css-3275816868020]:hover {
   color: peachpuff;
 }
-.css-13686855474469:hover:before, [data-css-13686855474469]:hover:before {
+.css-3275816868020:hover:before, [data-css-3275816868020]:hover:before {
   top: 10px;
 }
-.css-6315176858355, [data-css-6315176858355] {
+.css-10007073420595, [data-css-10007073420595] {
   color: gray;
   position: relative;
 }
-.css-6315176858355:before, [data-css-6315176858355]:before {
+.css-10007073420595:before, [data-css-10007073420595]:before {
   top: 0;
   content: \\"\\";
   position: absolute;
 }
-.css-13921000805328, [data-css-13921000805328] {
+.css-8455158449034, [data-css-8455158449034] {
   color: gray;
   position: relative;
 }
-.css-13921000805328:before, [data-css-13921000805328]:before {
+.css-8455158449034:before, [data-css-8455158449034]:before {
   top: 0;
   content: \\"\\";
   position: absolute;

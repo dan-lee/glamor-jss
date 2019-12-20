@@ -1,7 +1,8 @@
 import { transform as babelTransform } from 'babel-core'
 import hoist from './hoist'
 
-const transform = src => babelTransform(src, { plugins: [hoist] }).code
+const transform = (src: string) =>
+  babelTransform(src, { plugins: [hoist] }).code
 
 describe('Babel plugin', () => {
   test('Import', () => {
@@ -22,7 +23,7 @@ describe('Babel plugin', () => {
       }
     `)
 
-    expect(result).toMatchSnapshot()
+    expect(result).toMatchInlineSnapshot()
   })
 
   test('Named import', () => {

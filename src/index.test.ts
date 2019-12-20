@@ -6,7 +6,12 @@ describe('css', () => {
 
   test('Simple styles', () => {
     const style = css({ width: 100, height: 100 })
-    expect(renderToString()).toMatchSnapshot()
+    expect(renderToString()).toMatchInlineSnapshot(`
+      ".css-5638800070770, [data-css-5638800070770] {
+        width: 100px;
+        height: 100px;
+      }"
+    `)
     expect(style.toString()).not.toBeUndefined()
 
     expect(Object.keys({ ...style })[0]).toEqual(
@@ -29,7 +34,7 @@ describe('css', () => {
     css([null, {}, []])
     css({ ':after': { width: false && 100, height: 100 } })
 
-    expect(renderToString()).toMatchSnapshot()
+    expect(renderToString()).toMatchInlineSnapshot(`""`)
   })
 
   test('Complex styles', () => {
@@ -39,7 +44,7 @@ describe('css', () => {
     css(
       [
         { color: 'lightgoldenrodyellow' },
-        { height: 150, ':hover': { color: 'khaki' } },
+        { height: 150, '&:hover': { color: 'khaki', background: 'yellow' } },
       ],
       {
         border: '1px solid mediumaquamarine',
@@ -52,7 +57,7 @@ describe('css', () => {
           '@media (min-width: 800px)': { background: 'peachpuff' },
         },
         {
-          ':hover': {
+          '&:hover': {
             color: 'orchid',
           },
         },
@@ -66,7 +71,7 @@ describe('css', () => {
   test('Nested functional styles', () => {
     const activeStyle = {
       color: 'peachpuff',
-      ':before': {
+      '&:before': {
         top: 10,
       },
     }
@@ -75,18 +80,27 @@ describe('css', () => {
       css({
         position: 'relative',
         color: 'gray',
-        ':before': {
+        '&:before': {
           position: 'absolute',
           content: `""`,
           top: 0,
         },
-        ':hover': hover && activeStyle,
+        '&:hover': hover && activeStyle,
       })
 
     const styles = (toggle: boolean) =>
       css(style(toggle), toggle && activeStyle)
-    expect(styles(true)).toEqual({ 'data-css-13686855474469': '' })
-    expect(styles(false)).toEqual({ 'data-css-13921000805328': '' })
+
+    expect(styles(true)).toMatchInlineSnapshot(`
+      Object {
+        "data-css-3275816868020": "",
+      }
+    `)
+    expect(styles(false)).toMatchInlineSnapshot(`
+      Object {
+        "data-css-8455158449034": "",
+      }
+    `)
     expect(renderToString()).toMatchSnapshot()
   })
 
@@ -115,7 +129,7 @@ describe('css', () => {
     const complex = [
       [
         { color: 'lightgoldenrodyellow' },
-        { height: 150, ':hover': { color: 'khaki' } },
+        { height: 150, '&:hover': { color: 'khaki' } },
       ],
       {
         border: '1px solid mediumaquamarine',
@@ -142,6 +156,6 @@ describe('css', () => {
     man.rulesCount = MAX_RULES - 1
     man.addRule('test', { color: 'red' })
 
-    expect(man.registry.registry).toHaveLength(2)
+    expect((man.registry as any).registry).toHaveLength(2)
   })
 })

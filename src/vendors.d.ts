@@ -1,5 +1,5 @@
 declare module 'jss-preset-default' {
-  import { JSSOptions } from 'jss'
+  import { JssOptions } from 'jss'
 
   interface Options {
     template: object
@@ -14,5 +14,9 @@ declare module 'jss-preset-default' {
     propsSort: object
   }
 
-  export default function preset(options?: Options): JSSOptions
+  export default function preset(options?: Options): JssOptions
 }
+
+declare module 'babel-core'
+
+declare module 'memoize-weak'

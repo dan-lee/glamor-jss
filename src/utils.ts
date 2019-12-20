@@ -1,14 +1,22 @@
-const isObject = val =>
+export interface NumberedIndexSignature<V = any> {
+  [key: number]: V
+}
+
+export interface IndexSignature<V = any> {
+  [key: string]: V
+}
+
+const isObject = (val: any) =>
   Object.prototype.toString.call(val) === '[object Object]'
 
-const flatten = arr => Array.prototype.concat(...arr)
+const flatten = (arr: any[]) => Array.prototype.concat(...arr)
 
-const mergeValues = arr =>
+const mergeValues = (arr: any[]) =>
   arr.reduce((prev, curr) => ({ ...prev, ...curr }), {})
 
-const mergeDeep = (...objects) =>
+const mergeDeep = (...objects: IndexSignature[]) =>
   objects.reduce((prev, curr) => {
-    Object.keys(curr).forEach(key => {
+    Object.keys(curr).forEach((key: string) => {
       const prevVal = prev[key]
       const currVal = curr[key]
 
@@ -24,13 +32,13 @@ const mergeDeep = (...objects) =>
     return prev
   }, {})
 
-export const isFalsy = value =>
+export const isFalsy = (value: any) =>
   value === null ||
   value === undefined ||
   value === false ||
   (typeof value === 'object' && Object.keys(value).length === 0)
 
-export const cleanup = declarations => {
+export const cleanup = (declarations: IndexSignature) => {
   Object.keys(declarations).forEach(key => {
     if (isObject(declarations[key])) {
       cleanup(declarations[key])
@@ -42,15 +50,17 @@ export const cleanup = declarations => {
   return declarations
 }
 
-export const isEmptyObject = obj => {
+export const isEmptyObject = (obj: object) => {
   for (const _ in obj) return false
   return true
 }
 
-export const groupByType = obj =>
-  Object.keys(obj).reduce(
+type XY = 'media' | 'supports' | 'pseudo' | 'other'
+
+export const groupByType = (obj: Record<any, any>) =>
+  Object.keys(obj).reduce<Record<string, any>>(
     (prev, curr) => {
-      let key = 'other'
+      let key: XY = 'other'
       if (curr.indexOf('@supports') === 0) key = 'supports'
       else if (curr.indexOf('@media') === 0) key = 'media'
       else if (curr.indexOf(':') === 0 || curr.indexOf('&:') === 0)
@@ -68,10 +78,13 @@ export const groupByType = obj =>
  * filters out falsy values and groups them in to @media/@support/pseudos and others
  * to give them precendence in the stylesheet
  */
-export const processDeclarations = (declarations, cache) => {
+export const processDeclarations = (
+  declarations: IndexSignature,
+  cache: IndexSignature
+) => {
   const flattened = declarations
-    .map(d => (d && d.hash ? cache[d.hash].values : d))
-    .map(d => (Array.isArray(d) ? mergeValues(flatten(d)) : d))
+    .map((d: any) => (d && d.hash ? cache[d.hash].values : d))
+    .map((d: any) => (Array.isArray(d) ? mergeValues(flatten(d)) : d))
     .filter(Boolean)
 
   const merged = mergeDeep(...flattened)
