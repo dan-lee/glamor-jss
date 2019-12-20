@@ -23,8 +23,6 @@ exports[`css Complex styles 1`] = `
 }"
 `;
 
-exports[`css Falsy values 1`] = `""`;
-
 exports[`css Keyframes work without collision 1`] = `
 "@keyframes css-keyframes-fade-0 {
   from {
@@ -130,12 +128,5 @@ exports[`css Overwrite styles 1`] = `
 }
 .css-13164275224355, [data-css-13164275224355] {
   color: thistle;
-}"
-`;
-
-exports[`css Simple styles 1`] = `
-".css-5638800070770, [data-css-5638800070770] {
-  width: 100px;
-  height: 100px;
 }"
 `;
