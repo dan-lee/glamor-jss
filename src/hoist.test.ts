@@ -23,7 +23,7 @@ describe('Babel plugin', () => {
       }
     `)
 
-    expect(result).toMatchInlineSnapshot()
+    expect(result).toMatchSnapshot()
   })
 
   test('Named import', () => {
