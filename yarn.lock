@@ -2507,11 +2507,6 @@ cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   dependencies:
     cssom "0.3.x"
 
-curriable@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/curriable/-/curriable-1.1.0.tgz#51817788748032244e73d24b98128a7b6d9c799d"
-  integrity sha512-ka1Ds8tH/rbRdtEcHRpuzdhu1SwwuodP2KHaRSYQwf8LoV65sdR0heihP2KoitIqtCg+eAdAx970rxgAdCft/Q==
-
 cyclist@~0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
@@ -2994,11 +2989,6 @@ fast-levenshtein@~2.0.4:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
-fast-stringify@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/fast-stringify/-/fast-stringify-1.1.1.tgz#7abaff0e0ba09193a23cae940d6680f0c6f79e55"
-  integrity sha512-2oYQip2IKpGNOvVNhv5w6r3pI9BRSgoKZNsBnKCDXlc7envYhT2kYSejz11UZHVstGVCrUb6TWeENa4H1W5hwg==
-
 fb-watchman@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/fb-watchman/-/fb-watchman-2.0.0.tgz#54e9abf7dfa2f26cd9b1636c588c1afc05de5d58"
@@ -3427,14 +3417,10 @@ hash-base@^3.0.0:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-hash-it@4.0.4:
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/hash-it/-/hash-it-4.0.4.tgz#43f47227128fa05f446a6748fe192a6a347f2974"
-  integrity sha512-LC8xgrdjR3iW2hs7Vb18FFDIyv+hZHFAwJM11SKLwwI4LdoniT+ZmrHk7b6vYjoo7KPFPcGZ/8u2XybBWzWtsw==
-  dependencies:
-    curriable "^1.1.0"
-    fast-stringify "^1.1.1"
-    json-prune "^1.1.0"
+hash-it@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/hash-it/-/hash-it-5.0.0.tgz#e6612b304121b8873f56b7ed16cd7f492715ad5b"
+  integrity sha512-jlNHhQFcmUHdmJCdFKxMuEHuN6fNSJB8e2T2TtLfwgANs+dFMPRPlt1QsV8YGSZFYJaNqVGtNJUxxQ8M2ftnNQ==
 
 hash.js@^1.0.0, hash.js@^1.0.3:
   version "1.1.3"
@@ -4330,11 +4316,6 @@ json-parse-better-errors@^1.0.1, json-parse-better-errors@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/json-parse-better-errors/-/json-parse-better-errors-1.0.2.tgz#bb867cfb3450e69107c131d1c514bab3dc8bcaa9"
   integrity sha512-mrqyZKfX5EhL7hvqcV6WG1yYjnjeuYDzDhhcAAUrq8Po85NBQBJP+ZDUT75qZQ98IkUoBqdkExkukOU7Ts2wrw==
-
-json-prune@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/json-prune/-/json-prune-1.1.0.tgz#23e2fad108932b255050e3f1a70500c2b4aa30c7"
-  integrity sha1-I+L60QiTKyVQUOPxpwUAwrSqMMc=
 
 json-schema-traverse@^0.3.0:
   version "0.3.1"
