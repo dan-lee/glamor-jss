@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "clean-css": "4.2.1",
-    "express": "4.16.4",
+    "express": "4.17.3",
     "glamor-jss": "1.4.1",
     "raf": "3.4.1",
     "razzle": "2.4.0",
